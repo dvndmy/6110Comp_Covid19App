@@ -40,7 +40,7 @@ public class Registration extends AppCompatActivity {
        String  str_weight                = Weight.getText().toString();
        String type = "register";
        BackgroundWorker backgroundWorker = new BackgroundWorker(this);
-       backgroundWorker.execute(type, str_fullname, str_email, str_password, int_hospitalised , int_smoker ,  str_medication,  str_medicalcondition,  str_age, str_weight       ;
+       backgroundWorker.execute(type, str_fullname, str_email, str_password, /*int_hospitalised , int_smoker,*/  str_medication,  str_medicalcondition,  str_age, str_weight);
        }
 
 }
