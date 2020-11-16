@@ -8,6 +8,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.content.Intent;
+import android.view.View;
 
 
 
@@ -29,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
         BackgroundWorker backgroundWorker = new BackgroundWorker(this);
         backgroundWorker.execute(type, username, password);
     }
+    public void OpenReg(View view){
+        startActivity(new Intent(this, Registration.class));
 
+  }
 }
 

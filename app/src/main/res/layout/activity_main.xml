@@ -10,9 +10,10 @@ android:id="@+id/myrl">
         android:id="@+id/etUserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="224dp"
+        android:layout_marginStart="86dp"
+        android:layout_marginTop="154dp"
         android:ems="10"
         android:inputType="textPersonName" />
 
@@ -24,9 +25,9 @@ android:id="@+id/myrl">
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="105dp"
-        android:layout_marginLeft="105dp"
-        android:layout_marginTop="47dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="40dp"
         android:ems="10"
         android:inputType="textPassword" />
 
@@ -38,9 +39,22 @@ android:id="@+id/myrl">
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="168dp"
-        android:layout_marginLeft="168dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginStart="134dp"
+        android:layout_marginLeft="134dp"
+        android:layout_marginTop="88dp"
         android:onClick="OnLogin"
         android:text="Login" />
+
+    <Button
+        android:id="@+id/btn_reg"
+        android:layout_width="116dp"
+        android:layout_height="72dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="131dp"
+        android:layout_marginBottom="140dp"
+        android:hint="Reg"
+        android:text="Register"
+        android:onClick="OpenReg"/>
 </RelativeLayout>

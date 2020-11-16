@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.view.View;
 
 public class Registration extends AppCompatActivity {
     EditText FullName, Email, Password,  Medication, MedicalCondition, Age, Weight;
@@ -34,13 +35,13 @@ public class Registration extends AppCompatActivity {
        String  str_password              = Password.getText().toString();
      /*Integer int_hospitalised          = Hospitalised
        Integer int_smoker                = Smoker */
-       String   str_medication           = Medication.getText().toString();
+       String  str_medication           = Medication.getText().toString();
        String  str_medicalcondition      = MedicalCondition.getText().toString();
        String  str_age                   = Age.getText().toString();
        String  str_weight                = Weight.getText().toString();
        String type = "register";
        BackgroundWorker backgroundWorker = new BackgroundWorker(this);
-       backgroundWorker.execute(type, str_fullname, str_email, str_password, /*int_hospitalised , int_smoker,*/  str_medication,  str_medicalcondition,  str_age, str_weight);
+       backgroundWorker.execute(type, str_fullname, str_email, str_password, /*int_hospitalised  int_smoker*/  str_medication,  str_medicalcondition,  str_age, str_weight);
        }
 
 }
