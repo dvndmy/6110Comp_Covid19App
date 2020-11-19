@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Covid19App">
-        <activity android:name=".Registration"></activity>
+        <activity android:name=".ContactDoctor"/>
+        <activity android:name=".YourRecords" />
+        <activity android:name=".UserProfile" />
+        <activity android:name=".Registration" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

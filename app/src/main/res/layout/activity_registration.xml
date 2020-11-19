@@ -14,101 +14,133 @@
         android:hint="Fame"
         android:inputType="textPersonName"
         android:text="Full Name"
-        tools:layout_editor_absoluteX="47dp"
-        tools:layout_editor_absoluteY="93dp" />
-
-    <EditText
-        android:id="@+id/et_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Email"
-        android:inputType="textPersonName"
-        android:text="Email"
-        tools:layout_editor_absoluteX="47dp"
-        tools:layout_editor_absoluteY="148dp" />
-
-    <EditText
-        android:id="@+id/et_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPersonName"
-        android:text="Password"
-        tools:layout_editor_absoluteX="53dp"
-        tools:layout_editor_absoluteY="209dp" />
-
-    <CheckBox
-        android:id="@+id/cb_hospitalised"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Hospitalised"
-        android:text="Hospitalised?"
-        tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="288dp" />
+        app:layout_constraintBottom_toTopOf="@+id/et_email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.238"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.912" />
 
     <CheckBox
         android:id="@+id/cb_smoker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:hint="Smoker"
         android:text="Smoker?"
-        tools:layout_editor_absoluteX="170dp"
-        tools:layout_editor_absoluteY="288dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.184"
+        app:layout_constraintStart_toEndOf="@+id/cb_hospitalised"
+        app:layout_constraintTop_toBottomOf="@+id/et_password" />
 
-    <EditText
-        android:id="@+id/et_medication"
+    <CheckBox
+        android:id="@+id/cb_hospitalised"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Medication"
-        android:inputType="textPersonName"
-        android:text="Name"
-        tools:layout_editor_absoluteX="51dp"
-        tools:layout_editor_absoluteY="356dp"
-        tools:text="Medication" />
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="24dp"
+        android:hint="Hospitalised"
+        android:text="Hospitalised?"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_password" />
 
     <EditText
-        android:id="@+id/et_medicalcondition"
+        android:id="@+id/et_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="468dp"
         android:ems="10"
-        android:hint="Medical Condition"
+        android:hint="Password"
         android:inputType="textPersonName"
-        android:text="Medical Condition"
-        tools:layout_editor_absoluteX="51dp"
-        tools:layout_editor_absoluteY="415dp" />
-
-    <EditText
-        android:id="@+id/et_age"
-        android:layout_width="99dp"
-        android:layout_height="45dp"
-        android:ems="10"
-        android:hint="Age"
-        android:inputType="textPersonName"
-        android:text="Age"
-        tools:layout_editor_absoluteX="40dp"
-        tools:layout_editor_absoluteY="495dp" />
-
-    <EditText
-        android:id="@+id/et_weight"
-        android:layout_width="116dp"
-        android:layout_height="48dp"
-        android:ems="10"
-        android:hint="Weight"
-        android:inputType="textPersonName"
-        android:text="Weight (lbs)"
-        tools:layout_editor_absoluteX="186dp"
-        tools:layout_editor_absoluteY="499dp" />
+        android:text="Password"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.248"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btn_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
         android:hint="Register"
+        android:onClick="OnReg"
         android:text="Register"
-        tools:layout_editor_absoluteX="126dp"
-        tools:layout_editor_absoluteY="605dp"
-        android:onClick="OnReg"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_age"
+        app:layout_constraintVertical_bias="0.078" />
+
+    <EditText
+        android:id="@+id/et_medicalcondition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="Medical Condition"
+        android:inputType="textPersonName"
+        android:text="Medical Condition"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.238"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_medication" />
+
+    <EditText
+        android:id="@+id/et_medication"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Medication"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.238"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cb_hospitalised"
+        tools:text="Medication" />
+
+    <EditText
+        android:id="@+id/et_age"
+        android:layout_width="99dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="Age"
+        android:inputType="textPersonName"
+        android:text="Age"
+        app:layout_constraintEnd_toStartOf="@+id/et_weight"
+        app:layout_constraintHorizontal_bias="0.735"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_medicalcondition" />
+
+    <EditText
+        android:id="@+id/et_weight"
+        android:layout_width="116dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="128dp"
+        android:ems="10"
+        android:hint="Weight"
+        android:inputType="textPersonName"
+        android:text="Weight (lbs)"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_medicalcondition" />
+
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textPersonName"
+        android:text="Email"
+        app:layout_constraintBottom_toTopOf="@+id/et_password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.238"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
