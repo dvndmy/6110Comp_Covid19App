@@ -4,6 +4,7 @@
     android:id="@+id/myrl"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -15,27 +16,27 @@
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="200dp"
+        android:autofillHints="username"
         android:ems="10"
         android:hint="@string/enter_your_username_here"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="username" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/etPassword"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
+        android:autofillHints="password"
         android:ems="10"
         android:hint="@string/enter_your_password_here"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lbl_Password"
-        android:autofillHints="password" />
+        app:layout_constraintTop_toBottomOf="@+id/lbl_Password" />
 
     <Button
         android:id="@+id/btnLogin"
@@ -89,5 +90,16 @@
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etUserName" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="378dp"
+        android:layout_height="161dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/lbl_Username"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/coronavirus_logo_2_833x321"
+        android:contentDescription="@string/covid19_app_n_by_team_davja" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

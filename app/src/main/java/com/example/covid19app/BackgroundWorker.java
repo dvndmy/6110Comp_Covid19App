@@ -25,8 +25,8 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
     @Override
     protected String doInBackground(String... params) {
         String type         = params[0];
-        String login_url    = "http://10.0.2.2/login.php";
-        String register_url = "http://10.0.2.2/register.php";
+        String login_url    = "https://127.0.0.1/c19app/login.php";
+        String register_url = "https://127.0.0.1/c19app/register.php";
         if(type.equals("login")) {
             try {
                 String user_name = params[1];
@@ -116,7 +116,7 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
     @Override
     protected void onPreExecute() {
         alertDialog = new AlertDialog.Builder(context).create();
-        alertDialog.setTitle("Login Status");
+        alertDialog.setTitle("Login Status" );
     }
 
     @Override
