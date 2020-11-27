@@ -4,7 +4,6 @@
     android:id="@+id/myrl"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -66,6 +65,7 @@
 
     <TextView
         android:id="@+id/lbl_Username"
+        style="@style/TextlabelStyle"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -79,6 +79,7 @@
 
     <TextView
         android:id="@+id/lbl_Password"
+        style="@style/TextlabelStyle"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -96,10 +97,10 @@
         android:layout_width="378dp"
         android:layout_height="161dp"
         android:layout_marginBottom="16dp"
+        android:contentDescription="@string/covid19_app_n_by_team_davja"
         app:layout_constraintBottom_toTopOf="@+id/lbl_Username"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/coronavirus_logo_2_833x321"
-        android:contentDescription="@string/covid19_app_n_by_team_davja" />
+        app:srcCompat="@drawable/coronavirus_logo_2_833x321" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
