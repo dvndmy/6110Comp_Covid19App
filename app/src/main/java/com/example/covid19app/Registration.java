@@ -2,13 +2,15 @@ package com.example.covid19app;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.view.View;
 
 public class Registration extends AppCompatActivity {
-    EditText FullName, Email, Password,  Medication, MedicalCondition, Age, Weight;
+    EditText FullName, Email, Password,RepeatPassword,  Medication, MedicalCondition, Age, Weight;
     CheckBox Hospitalised, Smoker;
 
     String str_fullname, str_email, str_password, str_medication, str_medicalcondition, str_age, str_weight;
@@ -21,6 +23,7 @@ public class Registration extends AppCompatActivity {
         FullName            = (EditText)findViewById(R.id.et_fullname);
         Email               = (EditText)findViewById(R.id.et_email);
         Password            = (EditText)findViewById(R.id.et_password);
+        RepeatPassword            = (EditText)findViewById(R.id.et_password2);
         Hospitalised        = (CheckBox)findViewById(R.id.cb_hospitalised);
         Smoker              = (CheckBox)findViewById(R.id.cb_smoker);
         Medication          = (EditText)findViewById(R.id.et_medication);
@@ -33,6 +36,7 @@ public class Registration extends AppCompatActivity {
        String  str_fullname              = FullName.getText().toString();
        String  str_email                 = Email.getText().toString();
        String  str_password              = Password.getText().toString();
+       String  str_repeatpassword              = RepeatPassword.getText().toString();
      /*Integer int_hospitalised          = Hospitalised
        Integer int_smoker                = Smoker */
        String  str_medication           = Medication.getText().toString();
@@ -40,8 +44,17 @@ public class Registration extends AppCompatActivity {
        String  str_age                   = Age.getText().toString();
        String  str_weight                = Weight.getText().toString();
        String type = "register";
-       BackgroundWorker backgroundWorker = new BackgroundWorker(this);
-       backgroundWorker.execute(type, str_fullname, str_email, str_password, /*int_hospitalised  int_smoker*/  str_medication,  str_medicalcondition,  str_age, str_weight);
+       if(str_password.equals(str_repeatpassword)) {
+           BackgroundWorker backgroundWorker = new BackgroundWorker(this);
+           backgroundWorker.execute(type, str_fullname, str_email, str_password, /*int_hospitalised  int_smoker*/  str_medication, str_medicalcondition, str_age, str_weight);
+       }else{
+           AlertDialog alertDialog = new AlertDialog.Builder(Registration.this).create();
+           alertDialog.setTitle("Error");
+           alertDialog.setMessage("Your passwords do not match. Please try again.");
+           alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                   (dialog, which) -> dialog.dismiss());
+           alertDialog.show();
        }
+    }
 
 }

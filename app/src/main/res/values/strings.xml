@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">Covid19App</string>
+    <string name="full_name">Full Name</string>
+    <string name="smoker">Smoker</string>
+    <string name="smokerqu">Smoker?</string>
+    <string name="hospitalised">Hospitalised</string>
+    <string name="hospitalisedqu">Hospitalised?</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+    <string name="medical_condition">Medical Condition</string>
+    <string name="medication">Medication</string>
+    <string name="age">Age</string>
+    <string name="weight_lbs">Weight (lbs)</string>
+    <string name="email">Email</string>
+    <string name="enter_your_username_here">Enter Your Username here</string>
+    <string name="login">Login</string>
+    <string name="username">Username:</string>
+    <string name="enter_your_password_here">Enter Your Password here</string>
+    <string name="passwordlabel">Password:</string>
+    <string name="covid19_app_n_by_team_davja">Covid19 App \n By Team DAVJA</string>
+    <string name="repeat_password">Repeat Password</string>
 </resources>

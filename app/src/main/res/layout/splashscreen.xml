@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_blue"
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/logo_id"
+        android:layout_width="345dp"
+        android:layout_height="248dp"
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/covid19_app_n_by_team_davja"
+        android:src="@drawable/coronavirus_logo_2_833x321"
+        android:visibility="visible" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo_id"
+        android:layout_centerHorizontal="true"
+        android:text="@string/covid19_app_n_by_team_davja"
+        android:textAlignment="center"
+        android:textColor="@color/yellow"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>
