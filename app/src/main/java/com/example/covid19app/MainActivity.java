@@ -18,21 +18,23 @@ import android.view.View;
 
 
 public class MainActivity extends AppCompatActivity {
-    EditText UsernameEt, PasswordEt;
+    EditText EmailEt, PasswordEt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        UsernameEt = (EditText)findViewById(R.id.etUserName);
+        EmailEt = (EditText)findViewById(R.id.etEmail);
         PasswordEt = (EditText)findViewById(R.id.etPassword);
     }
 
     public void OnLogin(View view) {
-        String username = UsernameEt.getText().toString();
+        String email = EmailEt.getText().toString();
         String password = PasswordEt.getText().toString();
         String type = "login";
         BackgroundWorker backgroundWorker = new BackgroundWorker(this);
-        backgroundWorker.execute(type, username, password);
+        backgroundWorker.execute(type, email, password);
+
+        startActivity(new Intent(this, UserPage.class));
 
     }
     public void OpenReg(View view){

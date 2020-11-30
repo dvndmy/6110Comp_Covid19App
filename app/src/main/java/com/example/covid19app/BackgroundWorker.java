@@ -25,15 +25,15 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
     @Override
     protected String doInBackground(String... params) {
         String type         = params[0];
-        String login_url    = "https://127.0.0.1/login.php";
-        String register_url = "https://127.0.0.1/register.php";
+        String login_url    = "https://192.168.0.11/login.php";
+        String register_url = "https://192.168.0.11/register.php";
         if(type.equals("login")) {
             try {
                 String user_name = params[1];
                 String password = params[2];
                 URL url = new URL(login_url);
                 HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
-                httpURLConnection.setRequestMethod("POST");
+                httpURLConnection.setRequestMethod("post");
                 httpURLConnection.setDoOutput(true);
                 httpURLConnection.setDoInput(true);
                 OutputStream outputStream = httpURLConnection.getOutputStream();
