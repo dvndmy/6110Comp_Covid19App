@@ -12,7 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Covid19App">
         <activity android:name=".AddSymptoms" />
-        <activity android:name=".ContactDoctor" />
         <activity android:name=".YourRecords" />
         <activity android:name=".UserProfile" />
         <activity android:name=".Registration" />

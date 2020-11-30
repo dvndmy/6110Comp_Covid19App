@@ -45,30 +45,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnViewRecords" />
 
-    <Button
-        android:id="@+id/btnContactDoctor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Contact Doctor"
-        android:onClick="gotoContactDoctor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnUpdateRecords" />
-
-    <Button
-        android:id="@+id/btnHelp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Help"
-        android:onClick="gotoHelp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnContactDoctor"
-        app:layout_constraintVertical_bias="0.057"
-        />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
