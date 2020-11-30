@@ -55,7 +55,7 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
                 inputStream.close();
                 httpURLConnection.disconnect();
                 return result;
-            } catch (MalformedURLException e) {
+           } catch (MalformedURLException e) {
                 e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
