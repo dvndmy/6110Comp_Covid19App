@@ -20,8 +20,8 @@ public class UserProfile extends AppCompatActivity {
     public void gotoViewRecords(View view) {
         Button ViewRecords = (Button) findViewById(R.id.btnViewRecords);
 
-        ViewRecords.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
+        ViewRecords.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
                 startActivity(new Intent(UserProfile.this, YourRecords.class));
             }
         });

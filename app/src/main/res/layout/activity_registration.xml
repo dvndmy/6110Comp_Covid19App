@@ -3,189 +3,190 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context=".Registration">
 
-    <EditText
-        android:id="@+id/et_password2"
-        android:layout_width="308dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginBottom="8dp"
-        android:autofillHints="@string/password"
-        android:ems="10"
-        android:hint="@string/repeat_password"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/cb_hospitalised"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_password"
-        app:layout_constraintVertical_bias="0.883" />
-
-    <Button
-        android:id="@+id/btn_register"
-        android:layout_width="148dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="24dp"
-        android:hint="@string/register"
-        android:onClick="OnReg"
-        android:text="@string/register"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_age"
-        app:layout_constraintVertical_bias="0.51" />
-
-    <EditText
-        android:id="@+id/et_email"
-        android:layout_width="308dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:autofillHints="@string/email"
-        android:ems="10"
-        android:hint="@string/email"
-        android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/et_password"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_fullname" />
-
-    <EditText
-        android:id="@+id/et_fullname"
-        android:layout_width="308dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="8dp"
-        android:autofillHints="@string/full_name"
-        android:ems="10"
-        android:hint="@string/full_name"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/et_email"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
-
-    <EditText
-        android:id="@+id/et_weight"
-        android:layout_width="136dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="@string/weight_lbs"
-        android:importantForAutofill="no"
-        android:inputType="numberDecimal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/et_age"
-        app:layout_constraintTop_toBottomOf="@+id/et_medicalcondition" />
-
-    <CheckBox
-        android:id="@+id/cb_smoker"
-        android:layout_width="136dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="@dimen/activity_horizontal_margin"
-        android:hint="@string/smoker"
-        android:text="@string/smokerqu"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/cb_hospitalised"
-        app:layout_constraintTop_toBottomOf="@+id/et_password2" />
-
-    <CheckBox
-        android:id="@+id/cb_hospitalised"
-        android:layout_width="136dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="7dp"
-        android:hint="@string/hospitalised"
-        android:text="@string/hospitalisedqu"
-        app:layout_constraintEnd_toStartOf="@+id/cb_smoker"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_password2" />
-
-    <EditText
-        android:id="@+id/et_age"
-        android:layout_width="136dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
-        android:autofillHints="@string/age"
-        android:ems="10"
-        android:hint="@string/age"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toStartOf="@+id/et_weight"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_medicalcondition" />
-
-    <EditText
-        android:id="@+id/et_medication"
-        android:layout_width="308dp"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:ems="10"
-        android:hint="@string/medication"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/et_medicalcondition"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cb_hospitalised" />
+        tools:context=".Registration">
 
-    <EditText
-        android:id="@+id/et_medicalcondition"
-        android:layout_width="308dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:autofillHints="@string/medical_condition"
-        android:ems="10"
-        android:hint="@string/medical_condition"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_medication" />
+        <EditText
+            android:id="@+id/et_password2"
+            android:layout_width="308dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="8dp"
+            android:autofillHints="@string/password"
+            android:ems="10"
+            android:hint="@string/repeat_password"
+            android:inputType="textPassword"
+            app:layout_constraintBottom_toTopOf="@+id/cb_hospitalised"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_password"
+            app:layout_constraintVertical_bias="0.883" />
 
-    <EditText
-        android:id="@+id/et_password"
-        android:layout_width="308dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:autofillHints="@string/password"
-        android:ems="10"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/et_password2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_email" />
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="148dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="24dp"
+            android:hint="@string/register"
+            android:onClick="OnReg"
+            android:text="@string/register"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_age"
+            app:layout_constraintVertical_bias="0.51" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="309dp"
-        android:layout_height="125dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="8dp"
-        android:contentDescription="@string/covid19_app_n_by_team_davja"
-        app:layout_constraintBottom_toTopOf="@+id/et_fullname"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/coronavirus_logo_2_833x321" />
+        <EditText
+            android:id="@+id/et_email"
+            android:layout_width="308dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:autofillHints="@string/email"
+            android:ems="10"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            app:layout_constraintBottom_toTopOf="@+id/et_password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_fullname" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+            android:id="@+id/et_fullname"
+            android:layout_width="308dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="8dp"
+            android:autofillHints="@string/full_name"
+            android:ems="10"
+            android:hint="@string/full_name"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/et_email"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+        <EditText
+            android:id="@+id/et_weight"
+            android:layout_width="136dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:hint="@string/weight_lbs"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/et_age"
+            app:layout_constraintTop_toBottomOf="@+id/et_medicalcondition" />
+
+        <CheckBox
+            android:id="@+id/cb_smoker"
+            android:layout_width="136dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:hint="@string/smoker"
+            android:text="@string/smokerqu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cb_hospitalised"
+            app:layout_constraintTop_toBottomOf="@+id/et_password2" />
+
+        <CheckBox
+            android:id="@+id/cb_hospitalised"
+            android:layout_width="136dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="7dp"
+            android:hint="@string/hospitalised"
+            android:text="@string/hospitalisedqu"
+            app:layout_constraintEnd_toStartOf="@+id/cb_smoker"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_password2" />
+
+        <EditText
+            android:id="@+id/et_age"
+            android:layout_width="136dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:autofillHints="@string/age"
+            android:ems="10"
+            android:hint="@string/age"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toStartOf="@+id/et_weight"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_medicalcondition" />
+
+        <EditText
+            android:id="@+id/et_medication"
+            android:layout_width="308dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:ems="10"
+            android:hint="@string/medication"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/et_medicalcondition"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cb_hospitalised" />
+
+        <EditText
+            android:id="@+id/et_medicalcondition"
+            android:layout_width="308dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:autofillHints="@string/medical_condition"
+            android:ems="10"
+            android:hint="@string/medical_condition"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_medication" />
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="308dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:autofillHints="@string/password"
+            android:ems="10"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            app:layout_constraintBottom_toTopOf="@+id/et_password2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_email" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="309dp"
+            android:layout_height="125dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="@string/covid19_app_n_by_team_davja"
+            app:layout_constraintBottom_toTopOf="@+id/et_fullname"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/coronavirus_logo_2_833x321" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

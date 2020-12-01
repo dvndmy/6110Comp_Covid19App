@@ -12,11 +12,12 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.Covid19App">
+        <activity android:name=".forgotPassword"/>
         <activity android:name=".AddSymptoms" />
         <activity android:name=".YourRecords" />
         <activity android:name=".UserProfile" />
         <activity android:name=".Registration" />
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".MainActivity" />
         <activity android:name=".UserPage"/>
         <activity android:name=".SplashActivity">
             <intent-filter>
