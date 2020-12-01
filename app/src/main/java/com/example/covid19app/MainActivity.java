@@ -43,5 +43,9 @@ public class MainActivity extends AppCompatActivity {
 
   }
 
+    public void OnForgotPassword(View view){
+        startActivity(new Intent(this, forgotPassword.class));
+
+    }
 }
 
