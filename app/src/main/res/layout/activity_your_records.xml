@@ -52,14 +52,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Medication"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
                 android:text="Date"
                 android:textStyle="bold" />
 
@@ -85,7 +77,21 @@
                 android:layout_weight="1"
                 android:background="#ffffff"
                 android:gravity="center"
-                android:text="Enter Medication" />
+                android:text="Enter Date" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:text="Enter Records" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -119,16 +125,6 @@
                 android:layout_weight="1"
                 android:background="#ffffff"
                 android:gravity="center"
-                android:text="Enter Medication" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="1dp"
-                android:layout_marginBottom="1dp"
-                android:layout_weight="1"
-                android:background="#ffffff"
-                android:gravity="center"
                 android:text="Enter Date" />
 
         </TableRow>
@@ -144,50 +140,6 @@
                 android:background="#ffffff"
                 android:gravity="center"
                 android:text="Enter Records" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="1dp"
-                android:layout_marginBottom="1dp"
-                android:layout_weight="1"
-                android:background="#ffffff"
-                android:gravity="center"
-                android:text="Enter Medication" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="1dp"
-                android:layout_marginBottom="1dp"
-                android:layout_weight="1"
-                android:background="#ffffff"
-                android:gravity="center"
-                android:text="Enter Date" />
-
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="1dp"
-                android:layout_marginBottom="1dp"
-                android:layout_weight="1"
-                android:background="#ffffff"
-                android:gravity="center"
-                android:text="Enter Records" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="1dp"
-                android:layout_marginBottom="1dp"
-                android:layout_weight="1"
-                android:background="#ffffff"
-                android:gravity="center"
-                android:text="Enter Medication" />
 
             <TextView
                 android:layout_width="wrap_content"

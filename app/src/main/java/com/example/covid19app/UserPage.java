@@ -17,5 +17,9 @@ public class UserPage extends AppCompatActivity {
         startActivity(new Intent(this, AddSymptoms.class));
 
     }
+    public void OpenRecord(View view){
+        startActivity(new Intent(this, YourRecords.class));
+
+    }
 }
 

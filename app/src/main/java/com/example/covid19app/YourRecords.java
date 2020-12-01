@@ -2,7 +2,9 @@ package com.example.covid19app;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 public class YourRecords extends AppCompatActivity {
 
@@ -11,4 +13,5 @@ public class YourRecords extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_your_records);
     }
+
 }
