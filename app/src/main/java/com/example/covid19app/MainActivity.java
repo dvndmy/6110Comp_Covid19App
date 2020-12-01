@@ -36,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
 
         startActivity(new Intent(this, UserPage.class));
 
-    }
+        }
+
     public void OpenReg(View view){
         startActivity(new Intent(this, Registration.class));
 
