@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                     data[0] = email;
                     data[1] = password;
                     //change the ip and php file location to your own:
-                    PutData putData = new PutData("http://10.0.2.2/c19php/login.php", "POST", field, data);
+                    PutData putData = new PutData("http://192.168.1.15/c19php/login.php", "POST", field, data);
                     if (putData.startPut()) {
                         if (putData.onComplete()) {
                             String result = putData.getResult();

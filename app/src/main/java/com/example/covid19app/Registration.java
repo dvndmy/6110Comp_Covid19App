@@ -19,7 +19,7 @@ import android.widget.Toast;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 public class Registration extends AppCompatActivity {
-    EditText FullName, Email, Password, RepeatPassword, Medication, MedicalCondition, Age, Weight;
+    EditText FullName, Email, Password, RepeatPassword, Medication, MedicalCondition, Age, Weight, SecurityCode;
     CheckBox Hospitalised, Smoker;
 
     String str_fullname, str_email, str_password, str_repeatpassword, str_medication, str_medicalcondition, str_age, str_weight;
@@ -40,6 +40,7 @@ public class Registration extends AppCompatActivity {
         MedicalCondition = (EditText) findViewById(R.id.et_medicalcondition);
         Age = (EditText) findViewById(R.id.et_age);
         Weight = (EditText) findViewById(R.id.et_weight);
+        SecurityCode= (EditText) findViewById(R.id.et_securitycode);
     }
 
     //old registration code:
@@ -93,6 +94,7 @@ public class Registration extends AppCompatActivity {
         String str_medicalcondition = MedicalCondition.getText().toString();
         String str_age = Age.getText().toString();
         String str_weight = Weight.getText().toString();
+        String str_securitycode = SecurityCode.getText().toString();
         if (checkEnteredData()) {
             Handler handler = new Handler(Looper.getMainLooper());
             handler.post(new Runnable() {
@@ -100,7 +102,7 @@ public class Registration extends AppCompatActivity {
                 public void run() {
                     //Starting Write and Read data with URL
                     //Creating array for parameters
-                    String[] field = new String[10];
+                    String[] field = new String[11];
                     field[0] = "fullname";
                     field[1] = "email";
                     field[2] = "password";
@@ -111,8 +113,9 @@ public class Registration extends AppCompatActivity {
                     field[7] = "medicalcondition";
                     field[8] = "age";
                     field[9] = "weight";
+                    field[10] = "securitycode";
                     //Creating array for data
-                    String[] data = new String[10];
+                    String[] data = new String[11];
                     data[0] = str_fullname;
                     data[1] = str_email;
                     data[2] = str_password;
@@ -123,8 +126,9 @@ public class Registration extends AppCompatActivity {
                     data[7] = str_medicalcondition;
                     data[8] = str_age;
                     data[9] = str_weight;
+                    data[10] = str_securitycode;
                     //change ip and path as necessary
-                    PutData putData = new PutData("http://10.0.2.2/c19php/signup.php", "POST", field, data);
+                    PutData putData = new PutData("http://192.168.1.15/c19php/signup.php", "POST", field, data);
                     if (putData.startPut()) {
                         if (putData.onComplete()) {
                             String result = putData.getResult();
@@ -185,6 +189,10 @@ public class Registration extends AppCompatActivity {
         if (isEmpty(Age)) {
             noErrors = false;
             Age.setError("Age is required!");
+        }
+        if (isEmpty(SecurityCode)) {
+            noErrors = false;
+            SecurityCode.setError("This is needed to verify that it is you when trying to reset your password.");
         }
         return noErrors;
     }
