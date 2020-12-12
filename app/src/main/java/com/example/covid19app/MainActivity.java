@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
                             if (result.equals("Login Success")) {
                                 Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
 
-                                String userDetails = preferences.getString(data[0], data[1]);
+                                String userDetails = preferences.getString(field[0], data[0]);
                                 SharedPreferences.Editor editor = preferences.edit();
                                 editor.putString("userpage",userDetails);
                                 editor.apply();
