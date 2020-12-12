@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -21,14 +22,14 @@ import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 
 public class MainActivity extends AppCompatActivity {
-    EditText EmailEt, PasswordEt;
+   EditText EmailEt, PasswordEt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        EmailEt = (EditText) findViewById(R.id.etEmail);
-        PasswordEt = (EditText) findViewById(R.id.etPassword);
+         EmailEt = (EditText) findViewById(R.id.etEmail);
+         PasswordEt = (EditText) findViewById(R.id.etPassword);
 
 
     }
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
     public void OnLogin(View view) {
         String email = EmailEt.getText().toString();
         String password = PasswordEt.getText().toString();
+        SharedPreferences preferences = getSharedPreferences("MYPREFS", MODE_PRIVATE);
 
         if (!email.equals("") && !password.equals("")) {
             Handler handler = new Handler(Looper.getMainLooper());
@@ -65,12 +67,18 @@ public class MainActivity extends AppCompatActivity {
                     data[0] = email;
                     data[1] = password;
                     //change the ip and php file location to your own:
-                    PutData putData = new PutData("http://192.168.1.15/c19php/login.php", "POST", field, data);
+                    PutData putData = new PutData("http://192.168.0.11/c19db/login.php", "POST", field, data);
                     if (putData.startPut()) {
                         if (putData.onComplete()) {
                             String result = putData.getResult();
                             if (result.equals("Login Success")) {
                                 Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
+
+                                String userDetails = preferences.getString(data[0], data[1]);
+                                SharedPreferences.Editor editor = preferences.edit();
+                                editor.putString("userpage",userDetails);
+                                editor.apply();
+
                                 Intent intent = new Intent(getApplicationContext(), UserPage.class);
                                 startActivity(intent);
                                 finish();

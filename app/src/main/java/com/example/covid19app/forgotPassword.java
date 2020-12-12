@@ -63,7 +63,7 @@ EditText etUserName,etPassword, etPassword2 ;
                     data[1] = password;
                     data[2] = securitycode;
                     //change the ip and php file location to your own:
-                    PutData putData = new PutData("http://192.168.1.15/c19php/ForgotPassword.php", "POST", field, data);
+                    PutData putData = new PutData("http://192.168.0.11/c19db/ForgotPassword.php", "POST", field, data);
                     if (putData.startPut()) {
                         if (putData.onComplete()) {
                             String result = putData.getResult();

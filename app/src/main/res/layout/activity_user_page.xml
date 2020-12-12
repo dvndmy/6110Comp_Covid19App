@@ -7,8 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".UserPage">
 
-    <EditText
-        android:id="@+id/editTextDate"
+    <TextView
+        android:id="@+id/viewTextDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="11dp"
@@ -17,11 +17,11 @@
         android:text="Date:"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/editTextName"
-        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
+        app:layout_constraintStart_toStartOf="@+id/viewTextName"
+        app:layout_constraintTop_toBottomOf="@+id/viewTextName" />
 
-    <EditText
-        android:id="@+id/editTextName"
+    <TextView
+        android:id="@+id/viewTextName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -30,7 +30,7 @@
         android:inputType="date"
         android:text="Name:"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextDate"
+        app:layout_constraintBottom_toTopOf="@+id/viewTextDate"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -44,7 +44,7 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView7"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
+        app:layout_constraintTop_toBottomOf="@+id/viewTextDate" />
 
     <Button
         android:id="@+id/button"
