@@ -3,9 +3,12 @@ package com.example.covid19app;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class UserPage extends AppCompatActivity {
@@ -28,6 +31,24 @@ public class UserPage extends AppCompatActivity {
     public void OpenRecord(View view){
         startActivity(new Intent(this, YourRecords.class));
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch(item.getItemId()){
+            case R.id.menuLogout:
+
+                finish();
+                startActivity(new Intent(this, MainActivity.class));
+                break;
+        }
+        return true;
     }
 }
 
