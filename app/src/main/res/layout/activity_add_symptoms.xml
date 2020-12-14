@@ -11,7 +11,7 @@
     tools:context=".AddSymptoms">
 
     <CheckBox
-        android:id="@+id/symBreathless"
+        android:id="@+id/cb_Breathless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Breathlessness"
@@ -23,7 +23,7 @@
         app:layout_constraintVertical_bias="0.297" />
 
     <CheckBox
-        android:id="@+id/symDiarrhoea"
+        android:id="@+id/cb_Diarrhoea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Diarrhoea"
@@ -35,7 +35,7 @@
         app:layout_constraintVertical_bias="0.639" />
 
     <CheckBox
-        android:id="@+id/symCough"
+        android:id="@+id/cb_Cough"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cough"
@@ -47,7 +47,7 @@
         app:layout_constraintVertical_bias="0.207" />
 
     <CheckBox
-        android:id="@+id/symCongested"
+        android:id="@+id/cb_Congested"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Congested Nose"
@@ -59,7 +59,7 @@
         app:layout_constraintVertical_bias="0.467" />
 
     <CheckBox
-        android:id="@+id/symOthers"
+        android:id="@+id/cb_Others"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Other"
@@ -71,7 +71,7 @@
         app:layout_constraintVertical_bias="0.736" />
 
     <CheckBox
-        android:id="@+id/symSorethroat"
+        android:id="@+id/cb_Sorethroat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sore Throat"
@@ -83,7 +83,7 @@
         app:layout_constraintVertical_bias="0.38" />
 
     <CheckBox
-        android:id="@+id/symMuscleache"
+        android:id="@+id/cb_Muscleache"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Muscle Ache"
@@ -95,7 +95,7 @@
         app:layout_constraintVertical_bias="0.297" />
 
     <CheckBox
-        android:id="@+id/symHightemp"
+        android:id="@+id/cb_Hightemp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="High temperature"
@@ -107,7 +107,7 @@
         app:layout_constraintVertical_bias="0.556" />
 
     <CheckBox
-        android:id="@+id/symLosstaste"
+        android:id="@+id/cb_Losstaste"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Loss of taste"
@@ -119,7 +119,7 @@
         app:layout_constraintVertical_bias="0.38" />
 
     <CheckBox
-        android:id="@+id/symLosssmell"
+        android:id="@+id/cb_Losssmell"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Loss of smell"
@@ -131,7 +131,7 @@
         app:layout_constraintVertical_bias="0.467" />
 
     <CheckBox
-        android:id="@+id/symChills"
+        android:id="@+id/cb_Chills"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Chills"
@@ -143,7 +143,7 @@
         app:layout_constraintVertical_bias="0.639" />
 
     <CheckBox
-        android:id="@+id/symHeadache"
+        android:id="@+id/cb_Headache"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Headache"
@@ -155,7 +155,7 @@
         app:layout_constraintVertical_bias="0.206" />
 
     <CheckBox
-        android:id="@+id/symNausea"
+        android:id="@+id/cb_Nausea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nausea"
