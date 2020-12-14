@@ -128,7 +128,7 @@ public class Registration extends AppCompatActivity {
                     data[9] = str_weight;
                     data[10] = str_securitycode;
                     //change ip and path as necessary
-                    PutData putData = new PutData("http://192.168.0.11/c19db/signup.php", "POST", field, data);
+                    PutData putData = new PutData("http://192.168.1.15/c19php/signup.php", "POST", field, data);
                     if (putData.startPut()) {
                         if (putData.onComplete()) {
                             String result = putData.getResult();

@@ -15,44 +15,16 @@
         android:paddingBottom="@dimen/activity_vertical_margin"
         tools:context=".MainActivity">
 
-        <EditText
-            android:id="@+id/etEmail"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="200dp"
-            android:autofillHints="@string/email"
-            android:ems="10"
-            android:hint="enter your email here"
-            android:inputType="text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/etPassword"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="8dp"
-            android:autofillHints="password"
-            android:ems="10"
-            android:hint="@string/enter_your_password_here"
-            android:inputType="textPassword"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.495"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lbl_Password" />
-
         <Button
-            android:id="@+id/btnSave"
-            android:layout_width="238dp"
-            android:layout_height="58dp"
-            android:layout_marginTop="60dp"
-            android:onClick="OnLogin"
-            android:text="@string/login"
+            android:id="@+id/btn_patientLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:onClick="OnGoToPatientLogin"
+            android:text="Go to Patient Login page"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etPassword" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_Cancel" />
 
         <Button
             android:id="@+id/btn_reg"
@@ -66,28 +38,54 @@
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnSave"
-            app:layout_constraintVertical_bias="0.050000012" />
+            app:layout_constraintVertical_bias="0.084" />
 
-        <TextView
-            android:id="@+id/lblEmail"
-            style="@style/TextlabelStyle"
+        <EditText
+            android:id="@+id/etEmail"
             android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:text="@string/email"
-            android:textAlignment="viewStart"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/etEmail"
+            android:layout_height="50dp"
+            android:layout_marginTop="260dp"
+            android:autofillHints="@string/email"
+            android:ems="10"
+            android:hint="enter your email here"
+            android:inputType="text"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            android:autofillHints="password"
+            android:ems="10"
+            android:hint="@string/enter_your_password_here"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lbl_Password" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="238dp"
+            android:layout_height="58dp"
+            android:layout_marginTop="44dp"
+            android:onClick="OnLogin"
+            android:text="@string/login"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etPassword" />
 
         <TextView
             android:id="@+id/lbl_Password"
             style="@style/TextlabelStyle"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:text="@string/passwordlabel"
             android:textAlignment="viewStart"
             android:textSize="24sp"
@@ -96,17 +94,6 @@
             app:layout_constraintHorizontal_bias="0.504"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etEmail" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="378dp"
-            android:layout_height="161dp"
-            android:layout_marginBottom="16dp"
-            android:contentDescription="@string/covid19_app_n_by_team_davja"
-            app:layout_constraintBottom_toTopOf="@+id/lblEmail"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/coronavirus_logo_2_833x321" />
 
         <TextView
             android:id="@+id/tv_Cancel"
@@ -120,18 +107,48 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_reg"
-            app:layout_constraintVertical_bias="0.18" />
+            app:layout_constraintVertical_bias="0.238" />
 
-        <Button
-            android:id="@+id/btn_doctorLogin"
+        <TextView
+            android:id="@+id/lblEmail"
+            style="@style/TextlabelStyle"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="@string/email"
+            android:textAlignment="viewStart"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/etEmail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="378dp"
+            android:layout_height="161dp"
+            android:layout_marginBottom="52dp"
+            android:contentDescription="@string/covid19_app_n_by_team_davja"
+            app:layout_constraintBottom_toTopOf="@+id/lblEmail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.484"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/coronavirus_logo_2_833x321" />
+
+        <TextView
+            android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:onClick="OnGoToDoctorLogin"
-            android:text="Go to Doctor Login page"
+            android:text="Doctor Sign in:"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/lblEmail"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_Cancel" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

@@ -11,7 +11,7 @@
     <string name="medication">Medication</string>
     <string name="age">Age</string>
     <string name="weight_lbs">Weight (lbs)</string>
-    <string name="email">Email</string>
+    <string name="email">Email:</string>
     <string name="enter_your_username_here">Enter Your Username here</string>
     <string name="login">Login</string>
     <string name="username">Username:</string>
