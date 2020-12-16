@@ -30,6 +30,7 @@ public class AddSymptoms extends AppCompatActivity {
     EditText ID;
     Integer int_breathless, int_diarrhoea, int_cough, int_congested, int_others, int_sorethroat,
             int_muscleache, int_hightemp, int_losstaste, int_losssmell, int_chills, int_headache, int_nausea;
+    String ipAddress ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +53,7 @@ public class AddSymptoms extends AppCompatActivity {
         headache = (CheckBox)findViewById(R.id.cb_Headache);
         nausea = (CheckBox)findViewById(R.id.cb_Nausea);
 
-
+        ipAddress = ((MyIP) this.getApplication()).getIP();
 
         submitBtn = (Button) findViewById(R.id.submitBtn);
 
@@ -251,7 +252,7 @@ public class AddSymptoms extends AppCompatActivity {
                     data[11] = int_diarrhoea.toString();
                     data[12] = int_others.toString();
                     //change ip and path as necessary
-                    PutData putData = new PutData("http://192.168.0.51/c19php/AddSymptoms.php", "POST", field, data);
+                    PutData putData = new PutData("http://"+ ipAddress +"/c19php/AddSymptoms.php", "POST", field, data);
                     if (putData.startPut()) {
                         if (putData.onComplete()) {
                             String result = putData.getResult();
