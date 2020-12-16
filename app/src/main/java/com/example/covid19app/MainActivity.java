@@ -23,6 +23,7 @@ import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 public class MainActivity extends AppCompatActivity {
     EditText EmailEt, PasswordEt;
+    String ipAddress ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         EmailEt = (EditText) findViewById(R.id.etEmail);
         PasswordEt = (EditText) findViewById(R.id.etPassword);
-
+        ipAddress = ((MyIP) this.getApplication()).getIP();
 
     }
 
@@ -72,7 +73,7 @@ public void OnGoToDoctorLogin(View view) {
                     data[0] = email;
                     data[1] = password;
                     //change the ip and php file location to your own:
-                    PutData putData = new PutData("http://192.168.0.11/c19php/login.php", "POST", field, data);
+                    PutData putData = new PutData("http://"+ ipAddress +"/c19php/login.php", "POST", field, data);
                     if (putData.startPut()) {
                         if (putData.onComplete()) {
                             String result = putData.getResult();

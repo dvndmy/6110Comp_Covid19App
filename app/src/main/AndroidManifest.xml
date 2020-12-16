@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".MyIP"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -18,6 +19,7 @@
         <activity android:name=".UserProfile" />
         <activity android:name=".Registration" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".EditUser" />
         <activity android:name=".UserPage" />
         <activity android:name=".DoctorLogin" />
         <activity android:name=".DoctorForgotPassword" />

@@ -16,6 +16,7 @@ import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 public class DoctorForgotPassword extends AppCompatActivity {
 EditText etUserName,etPassword, etPassword2 ;
+    String ipAddress;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +24,7 @@ EditText etUserName,etPassword, etPassword2 ;
         etUserName = (EditText)findViewById(R.id.etEmailfp);
         etPassword = (EditText)findViewById(R.id.etPassword);
         etPassword2 = (EditText)findViewById(R.id.etPassword2);
+        ipAddress = ((MyIP) this.getApplication()).getIP();
     }
 
     public void OnForgotSC(View view){
@@ -63,7 +65,7 @@ EditText etUserName,etPassword, etPassword2 ;
                     data[1] = password;
                     data[2] = securitycode;
                     //change the ip and php file location to your own:
-                    PutData putData = new PutData("http://192.168.0.11/c19php/DoctorForgotPassword.php", "POST", field, data);
+                    PutData putData = new PutData("http://"+ ipAddress +"/c19php/DoctorForgotPassword.php", "POST", field, data);
                     if (putData.startPut()) {
                         if (putData.onComplete()) {
                             String result = putData.getResult();

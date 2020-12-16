@@ -1,27 +1,38 @@
 package com.example.covid19app;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Patterns;
+import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.view.View;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
-public class Registration extends AppCompatActivity {
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+
+public class EditUser extends AppCompatActivity {
     EditText FullName, Email, Password, RepeatPassword, Medication, MedicalCondition, Age, Weight, SecurityCode;
     CheckBox Hospitalised, Smoker;
-
+    public profile userProfile;
     String str_fullname, str_email, str_password, str_repeatpassword, str_medication, str_medicalcondition, str_age, str_weight;
     Integer int_hospitalised, int_smoker;
     Boolean noErrors = true;
@@ -30,7 +41,7 @@ public class Registration extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registration);
+        setContentView(R.layout.activity_edit_user);
         FullName = (EditText) findViewById(R.id.et_fullname);
         Email = (EditText) findViewById(R.id.et_email);
         Password = (EditText) findViewById(R.id.et_password);
@@ -43,6 +54,59 @@ public class Registration extends AppCompatActivity {
         Weight = (EditText) findViewById(R.id.et_weight);
         SecurityCode= (EditText) findViewById(R.id.et_securitycode);
         ipAddress = ((MyIP) this.getApplication()).getIP();
+
+        SharedPreferences preferences = getSharedPreferences("MYPREFS", MODE_PRIVATE);
+        String userpage = preferences.getString("userpage","");
+        Toast.makeText(getApplicationContext(), userpage, Toast.LENGTH_SHORT).show();
+        StringRequest stringRequest = new StringRequest( Request.Method.GET, "http://"+ ipAddress +"/c19php/GetProfileDetails.php?user="+userpage, response -> {
+            try {
+                //converting the string to json array object
+                JSONArray array = new JSONArray(response);
+
+                //traversing through all the object
+                for (int i = 0; i < array.length(); i++) {
+
+                    //getting product object from json array
+                    JSONObject profilejson = array.getJSONObject(i);
+
+                    //adding the product to product list
+                    userProfile=new profile(profilejson.getString("fullname"),profilejson.getString("email"),profilejson.getInt("hospitalised"),profilejson.getInt("smoker"),profilejson.getString("medication"),profilejson.getString("medicalcondition"),profilejson.getInt("age"),profilejson.getInt("weight"),profilejson.getInt("securitycode"));
+
+                }
+                FullName.setText(userProfile.getFullname());
+                Email.setText(userProfile.getEmail());
+                Password.setText("");
+                RepeatPassword.setText("");
+
+
+                if (userProfile.getHospitalised()==0) {
+                    Hospitalised.setChecked(false);
+                } else {
+                    Hospitalised.setChecked(true);
+                }
+
+                if (userProfile.getSmoker()==0) {
+                    Smoker.setChecked(false);
+                } else {
+                    Smoker.setChecked(true);
+                }
+                Medication.setText(userProfile.getMedication());
+                MedicalCondition.setText(userProfile.getMedicalCondition());
+                Age.setText(String.valueOf(userProfile.getAge()));
+                Weight.setText(String.valueOf(userProfile.getWeight()));
+                SecurityCode.setText(String.valueOf(userProfile.getSecurityCode()));
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        },
+                error -> {
+                    System.out.println("error");
+                });
+
+        //adding our stringrequest to queue
+        Volley.newRequestQueue(this).add(stringRequest);
+       // loadProfile();
     }
 
     //old registration code:
@@ -74,7 +138,7 @@ public class Registration extends AppCompatActivity {
 //    }
 
     public void OnReg(View view) {
-        ;
+
         String str_fullname = FullName.getText().toString();
         String str_email = Email.getText().toString();
         String str_password = Password.getText().toString();
@@ -130,13 +194,13 @@ public class Registration extends AppCompatActivity {
                     data[9] = str_weight;
                     data[10] = str_securitycode;
                     //change ip and path as necessary
-                    PutData putData = new PutData("http://"+ ipAddress +"/c19php/signup.php", "POST", field, data);
+                    PutData putData = new PutData("http://"+ ipAddress +"/c19php/EditDetails.php", "POST", field, data);
                     if (putData.startPut()) {
                         if (putData.onComplete()) {
                             String result = putData.getResult();
-                            if (result.equals("Registered Successfully")) {
+                            if (result.equals("Edit details Success")) {
                                 Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                Intent intent = new Intent(getApplicationContext(), UserPage.class);
                                 startActivity(intent);
                                 finish();
                             } else {
@@ -178,7 +242,7 @@ public class Registration extends AppCompatActivity {
         }
         if (!Password.getText().toString().equals(RepeatPassword.getText().toString())) {
             if (noErrors == true) {
-                AlertDialog alertDialog = new AlertDialog.Builder(Registration.this).create();
+                AlertDialog alertDialog = new AlertDialog.Builder(EditUser.this).create();
                 alertDialog.setTitle("Error");
                 alertDialog.setMessage("Your passwords do not match. Please try again.");
                 alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
