@@ -33,6 +33,11 @@ public class UserPage extends AppCompatActivity {
 
     }
 
+    public void OnEdit(View view){
+        startActivity(new Intent(this, EditUser.class));
+
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu,menu);
