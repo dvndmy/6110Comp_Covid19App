@@ -11,6 +11,34 @@
         android:layout_height="wrap_content"
         tools:context=".Registration">
 
+        <CheckBox
+            android:id="@+id/cb_Female"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="24dp"
+            android:onClick="onFemaleClick"
+            android:text="Female"
+            app:layout_constraintBottom_toTopOf="@+id/btn_save"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.773"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_securitycode" />
+
+        <CheckBox
+            android:id="@+id/cb_Male"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="24dp"
+            android:onClick="onMaleClick"
+            android:text="Male"
+            app:layout_constraintBottom_toTopOf="@+id/btn_save"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.212"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_securitycode" />
+
         <EditText
             android:id="@+id/et_securitycode"
             android:layout_width="308dp"
@@ -44,15 +72,13 @@
             android:id="@+id/btn_save"
             android:layout_width="148dp"
             android:layout_height="80dp"
-            android:layout_marginTop="24dp"
             android:hint="@string/register"
             android:onClick="OnReg"
             android:text="@string/register"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_securitycode" />
+            app:layout_constraintTop_toBottomOf="@+id/cb_Female" />
 
         <EditText
             android:id="@+id/et_email"

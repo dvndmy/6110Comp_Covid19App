@@ -33,7 +33,7 @@ import java.util.ArrayList;
 
 public class EditUser extends AppCompatActivity {
     EditText FullName, Email, Password, RepeatPassword, Medication, MedicalCondition, Age, Weight, SecurityCode;
-    CheckBox Hospitalised, Smoker;
+    CheckBox Hospitalised, Smoker, male, female;
     public profile userProfile;
     String str_fullname, str_email, str_password, str_repeatpassword, str_medication, str_medicalcondition, str_age, str_weight;
     Integer int_hospitalised, int_smoker;
@@ -56,6 +56,8 @@ public class EditUser extends AppCompatActivity {
         Weight = (EditText) findViewById(R.id.et_weight);
         SecurityCode= (EditText) findViewById(R.id.et_securitycode);
         ipAddress = ((MyIP) this.getApplication()).getIP();
+        male = (CheckBox) findViewById(R.id.cb_Male2);
+        female = (CheckBox) findViewById(R.id.cb_Female2);
 
         SharedPreferences preferences = getSharedPreferences("MYPREFS", MODE_PRIVATE);
         String userpage = preferences.getString("userpage","");
@@ -72,7 +74,7 @@ public class EditUser extends AppCompatActivity {
                     JSONObject profilejson = array.getJSONObject(i);
 
                     //adding the product to product list
-                    userProfile=new profile(profilejson.getString("fullname"),profilejson.getString("email"),profilejson.getInt("hospitalised"),profilejson.getInt("smoker"),profilejson.getString("medication"),profilejson.getString("medicalcondition"),profilejson.getInt("age"),profilejson.getInt("weight"),profilejson.getInt("securitycode"));
+                    userProfile=new profile(profilejson.getString("fullname"),profilejson.getString("email"),profilejson.getInt("hospitalised"),profilejson.getInt("smoker"),profilejson.getString("medication"),profilejson.getString("medicalcondition"),profilejson.getInt("age"),profilejson.getInt("weight"),profilejson.getInt("securitycode"),profilejson.getString("gender"));
 
                 }
                 FullName.setText(userProfile.getFullname());
@@ -97,7 +99,11 @@ public class EditUser extends AppCompatActivity {
                 Age.setText(String.valueOf(userProfile.getAge()));
                 Weight.setText(String.valueOf(userProfile.getWeight()));
                 SecurityCode.setText(String.valueOf(userProfile.getSecurityCode()));
-
+                if (userProfile.getGender().equals("Male")){
+                   male.setChecked(true);
+                }else if(userProfile.getGender().equals("Female")){
+                    female.setChecked(true);
+                }
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -138,6 +144,18 @@ public class EditUser extends AppCompatActivity {
 //
 //       }
 //    }
+
+    public void onMaleClick(View view){
+
+        male.setChecked(true);
+        female.setChecked(false);
+    }
+    public void onFemaleClick(View view){
+
+        male.setChecked(false);
+        female.setChecked(true);
+    }
+
 //Register on click method
     public void OnReg(View view) {
 
@@ -159,6 +177,12 @@ public class EditUser extends AppCompatActivity {
         } else {
             int_smoker = 0;
         }
+        String str_gender;
+        if (male.isChecked()){
+            str_gender="Male";
+        }else{
+            str_gender="Female";
+        }
         String str_medication = Medication.getText().toString();
         String str_medicalcondition = MedicalCondition.getText().toString();
         String str_age = Age.getText().toString();
@@ -171,7 +195,7 @@ public class EditUser extends AppCompatActivity {
                 public void run() {
                     //Starting Write and Read data with URL
                     //Creating array for parameters
-                    String[] field = new String[11];
+                    String[] field = new String[12];
                     field[0] = "fullname";
                     field[1] = "email";
                     field[2] = "password";
@@ -183,8 +207,9 @@ public class EditUser extends AppCompatActivity {
                     field[8] = "age";
                     field[9] = "weight";
                     field[10] = "securitycode";
+                    field[11] = "gender";
                     //Creating array for data
-                    String[] data = new String[11];
+                    String[] data = new String[12];
                     data[0] = str_fullname;
                     data[1] = str_email;
                     data[2] = str_password;
@@ -196,14 +221,15 @@ public class EditUser extends AppCompatActivity {
                     data[8] = str_age;
                     data[9] = str_weight;
                     data[10] = str_securitycode;
+                    data[11] = str_gender;
                     //change ip and path as necessary
                     PutData putData = new PutData("http://"+ ipAddress +"/c19php/EditDetails.php", "POST", field, data);
                     if (putData.startPut()) {
                         if (putData.onComplete()) {
                             String result = putData.getResult();
-                            if (result.equals("Edit details Success")) {
+                            if (result.equals("Details saved Successfully")) {
                                 Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(getApplicationContext(), UserPage.class);
+                                Intent intent = new Intent(getApplicationContext(), Dashboard.class);
                                 startActivity(intent);
                                 finish();
                             } else {
@@ -254,6 +280,11 @@ public class EditUser extends AppCompatActivity {
             } else {
                 noErrors = false;
             }
+        }
+        if (male.isChecked()==false && female.isChecked()==false) {
+            noErrors = false;
+            male.setError("Gender is required!");
+            female.setError("Gender is required!");
         }
         if (isEmpty(Age)) {
             noErrors = false;

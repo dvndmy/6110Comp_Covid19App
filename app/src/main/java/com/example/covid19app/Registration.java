@@ -20,7 +20,7 @@ import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 public class Registration extends AppCompatActivity {
     EditText FullName, Email, Password, RepeatPassword, Medication, MedicalCondition, Age, Weight, SecurityCode;
-    CheckBox Hospitalised, Smoker;
+    CheckBox Hospitalised, Smoker, male, female;
 
     String str_fullname, str_email, str_password, str_repeatpassword, str_medication, str_medicalcondition, str_age, str_weight;
     Integer int_hospitalised, int_smoker;
@@ -43,6 +43,8 @@ public class Registration extends AppCompatActivity {
         Weight = (EditText) findViewById(R.id.et_weight);
         SecurityCode= (EditText) findViewById(R.id.et_securitycode);
         ipAddress = ((MyIP) this.getApplication()).getIP();
+        male = (CheckBox) findViewById(R.id.cb_Male);
+        female = (CheckBox) findViewById(R.id.cb_Female);
     }
 
     //old registration code:
@@ -73,6 +75,16 @@ public class Registration extends AppCompatActivity {
 //       }
 //    }
 
+    public void onMaleClick(View view){
+
+       male.setChecked(true);
+female.setChecked(false);
+    }
+    public void onFemaleClick(View view){
+
+        male.setChecked(false);
+        female.setChecked(true);
+    }
     public void OnReg(View view) {
         ;
         String str_fullname = FullName.getText().toString();
@@ -86,11 +98,18 @@ public class Registration extends AppCompatActivity {
         } else {
             int_hospitalised = 0;
         }
+
         Integer int_smoker;
         if (Smoker.isChecked()) {
             int_smoker = 1;
         } else {
             int_smoker = 0;
+        }
+        String str_gender;
+        if (male.isChecked()){
+            str_gender="Male";
+        }else{
+            str_gender="Female";
         }
         String str_medication = Medication.getText().toString();
         String str_medicalcondition = MedicalCondition.getText().toString();
@@ -104,7 +123,7 @@ public class Registration extends AppCompatActivity {
                 public void run() {
                     //Starting Write and Read data with URL
                     //Creating array for parameters
-                    String[] field = new String[11];
+                    String[] field = new String[12];
                     field[0] = "fullname";
                     field[1] = "email";
                     field[2] = "password";
@@ -116,8 +135,9 @@ public class Registration extends AppCompatActivity {
                     field[8] = "age";
                     field[9] = "weight";
                     field[10] = "securitycode";
+                    field[11] = "gender";
                     //Creating array for data
-                    String[] data = new String[11];
+                    String[] data = new String[12];
                     data[0] = str_fullname;
                     data[1] = str_email;
                     data[2] = str_password;
@@ -129,6 +149,7 @@ public class Registration extends AppCompatActivity {
                     data[8] = str_age;
                     data[9] = str_weight;
                     data[10] = str_securitycode;
+                    data[11] = str_gender;
                     //change ip and path as necessary
                     PutData putData = new PutData("http://"+ ipAddress +"/c19php/signup.php", "POST", field, data);
                     if (putData.startPut()) {
@@ -191,6 +212,11 @@ public class Registration extends AppCompatActivity {
         if (isEmpty(Age)) {
             noErrors = false;
             Age.setError("Age is required!");
+        }
+        if (male.isChecked()==false && female.isChecked()==false) {
+            noErrors = false;
+            male.setError("Gender is required!");
+            female.setError("Gender is required!");
         }
         if (isEmpty(SecurityCode)) {
             noErrors = false;
