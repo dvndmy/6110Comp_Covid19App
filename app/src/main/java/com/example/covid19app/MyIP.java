@@ -4,7 +4,7 @@ import android.app.Application;
 
 public class MyIP extends Application {
 
-    private String IP = "192.168.1.15";
+    private String IP = "192.168.0.11";
 
     public String getIP() {
         return IP;

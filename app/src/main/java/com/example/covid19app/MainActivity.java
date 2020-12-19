@@ -106,6 +106,8 @@ public void OnGoToDoctorLogin(View view) {
         startActivity(new Intent(this, Registration.class));
     }
 
+
+
     public void OnForgotPassword(View view) {
         startActivity(new Intent(this, forgotPassword.class));
 

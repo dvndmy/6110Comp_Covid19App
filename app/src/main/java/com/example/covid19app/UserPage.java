@@ -54,8 +54,6 @@ public class UserPage extends AppCompatActivity {
         SharedPreferences preferences = getSharedPreferences("MYPREFS", MODE_PRIVATE);
         String userpage = preferences.getString("userpage","");
 
-        TextView displayInfo = (TextView) findViewById(R.id.viewTextName);
-        displayInfo.setText(userpage);
     }
 
     public void OpenSymp(View view){
@@ -181,9 +179,6 @@ public class UserPage extends AppCompatActivity {
 
 
     }
-
-
-
 
 
 

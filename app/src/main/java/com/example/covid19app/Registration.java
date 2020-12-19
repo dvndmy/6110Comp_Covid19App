@@ -208,4 +208,8 @@ public class Registration extends AppCompatActivity {
         CharSequence email = text.getText().toString();
         return (!TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches());
     }
+
+    public void OpenLog (View view) {
+        startActivity(new Intent(this, MainActivity.class));
+    }
 }
