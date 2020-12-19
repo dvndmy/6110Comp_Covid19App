@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -12,6 +19,7 @@
         android:contentDescription="@string/covid19_app_n_by_team_davja"
         app:layout_constraintBottom_toTopOf="@+id/lblwelcome_back"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/coronavirus_logo_2_833x321" />
@@ -28,44 +36,58 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/button4"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Button
-        android:id="@+id/button4"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="20dp"
-        android:onClick="OpenUserPage"
-        android:text="Add Feeling"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintEnd_toEndOf="@+id/button5"
-        app:layout_constraintStart_toStartOf="@+id/button2"
-        app:layout_constraintTop_toBottomOf="@+id/lblwelcome_back" />
-
-    <Button
         android:id="@+id/button2"
-        android:layout_width="165dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="107dp"
-        android:layout_marginBottom="22dp"
+        android:layout_width="174dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="24dp"
         android:onClick="OpenSymp"
         android:text="Add symptoms"
         app:layout_constraintBottom_toTopOf="@+id/button5"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button4" />
 
     <Button
+        android:id="@+id/button4"
+        android:layout_width="174dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="24dp"
+        android:onClick="OpenUserPage"
+        android:text="Add Feeling"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblwelcome_back" />
+
+    <Button
+        android:id="@+id/btn_edit"
+        android:layout_width="174dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="16dp"
+        android:onClick="OnEdit"
+        android:text="Edit Profile"
+        app:layout_constraintBottom_toBottomOf="@+id/viewTextDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button5" />
+
+    <Button
         android:id="@+id/button5"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="174dp"
+        android:layout_height="80dp"
         android:layout_marginBottom="210dp"
         android:onClick="OpenRecord"
         android:text="myrecords"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/button2"
-        app:layout_constraintStart_toStartOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

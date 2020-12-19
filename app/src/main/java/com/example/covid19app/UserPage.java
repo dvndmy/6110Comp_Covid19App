@@ -72,86 +72,73 @@ public class UserPage extends AppCompatActivity {
 
     }
 
-    public void OnEdit(View view){
-        startActivity(new Intent(this, EditUser.class));
+
+
+    public void onvgClick(View view){
+
+        verygood.setChecked(true);
+            good.setChecked(false);
+            neutral.setChecked(false);
+            bad.setChecked(false);
+            verybad.setChecked(false);
 
     }
 
+    public void ongClick(View view){
+
+        good.setChecked(true);
+            verygood.setChecked(false);
+            neutral.setChecked(false);
+            bad.setChecked(false);
+            verybad.setChecked(false);
+
+    }
+    public void onnClick(View view){
+        neutral.setChecked(true);
+            good.setChecked(false);
+            verygood.setChecked(false);
+            bad.setChecked(false);
+            verybad.setChecked(false);
+    }
+
+    public void onbClick(View view){
+        bad.setChecked(true);
+            good.setChecked(false);
+            neutral.setChecked(false);
+            verygood.setChecked(false);
+            verybad.setChecked(false);
+    }
+
+    public void onvbClick(View view){
+        verybad.setChecked(true);
+            good.setChecked(false);
+            neutral.setChecked(false);
+            bad.setChecked(false);
+            verygood.setChecked(false);
+    }
     public void onSubmit(View view) throws InterruptedException {
-        ;
-        //Checks for only one checkbox selected
-        int cb_count=0;
-        if (verygood.isChecked()) {
-            cb_count=cb_count+1;
-        }if (good.isChecked()) {
-            cb_count=cb_count+1;
-        }if (neutral.isChecked()) {
-            cb_count=cb_count+1;
-        }if (bad.isChecked()) {
-            cb_count=cb_count+1;
-        }if (verybad.isChecked()) {
-            cb_count = cb_count + 1;
-        }
-            //Checks if only one checkbox has been selected
-        if (cb_count == 1) {
+            String str_mood = "";
 
-            //Below code checks for the integer value of checkbox input to determine the string value of mood
-
-            Integer int_verygood;
+            //Below code checks for the checkbox input to determine the string value of mood
             if (verygood.isChecked()) {
-                int_verygood = 1;
-            } else {
-                int_verygood = 0;
+             str_mood = "Very good";
+            } else if (good.isChecked()) {
+                 str_mood = "Good";
+            } else if (neutral.isChecked()) {
+                 str_mood = "Neutral";
+            } else if (bad.isChecked()) {
+                 str_mood = "Bad";
+            } else if (verybad.isChecked()) {
+                 str_mood = "Very bad";
             }
 
-            Integer int_good;
-            if (good.isChecked()) {
-                int_good = 1;
-            } else {
-                int_good = 0;
-            }
 
-            Integer int_neutral;
-            if (neutral.isChecked()) {
-                int_neutral = 1;
-            } else {
-                int_neutral = 0;
-            }
-
-            Integer int_bad;
-            if (bad.isChecked()) {
-                int_bad = 1;
-            } else {
-                int_bad = 0;
-            }
-
-            Integer int_verybad;
-            if (verybad.isChecked()) {
-                int_verybad = 1;
-            } else {
-                int_verybad = 0;
-            }
-
-            if (int_verygood == 1) {
-            String str_mood = "Very good";
-            } else if (int_good == 1) {
-                String str_mood = "Good";
-            } else if (int_neutral == 1) {
-                String str_mood = "Neutral";
-            } else if (int_bad == 1) {
-                String str_mood = "Bad";
-            } else if (int_verybad == 1) {
-                String str_mood = "Very bad";
-            }
-
-        } else {
-            Toast.makeText(UserPage.this, "Please select only one checkbox!", Toast.LENGTH_SHORT).show();
-        }
         String str_stress = stress.getText().toString();
         String str_energy = energy.getText().toString();
         SharedPreferences preferences = getSharedPreferences("MYPREFS", MODE_PRIVATE);
         String emailad = preferences.getString("userpage","");
         Handler handler = new Handler(Looper.getMainLooper());
+        String finalStr_mood = str_mood;
         handler.post(new Runnable() {
             @Override
             public void run() {
@@ -165,7 +152,7 @@ public class UserPage extends AppCompatActivity {
 
                 //Creating array for data
                 String[] data = new String[4];
-                data[0] = str_mood.toString();
+                data[0] = finalStr_mood.toString();
                 data[1] = str_stress.toString();
                 data[2] = str_energy.toString();
                 data[3] = emailad;
