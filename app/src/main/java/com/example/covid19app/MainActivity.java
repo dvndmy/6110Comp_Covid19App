@@ -85,7 +85,7 @@ public void OnGoToDoctorLogin(View view) {
                                 editor.putString("userpage",userDetails);
                                 editor.apply();
 
-                                Intent intent = new Intent(getApplicationContext(), UserPage.class);
+                                Intent intent = new Intent(getApplicationContext(), Dashboard.class);
                                 startActivity(intent);
                                 finish();
                             } else {
