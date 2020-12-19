@@ -1,5 +1,6 @@
 package com.example.covid19app;
 
+
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -15,6 +16,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -136,7 +138,7 @@ public class EditUser extends AppCompatActivity {
 //
 //       }
 //    }
-
+//Register on click method
     public void OnReg(View view) {
 
         String str_fullname = FullName.getText().toString();
@@ -144,6 +146,7 @@ public class EditUser extends AppCompatActivity {
         String str_password = Password.getText().toString();
         String str_repeatpassword = RepeatPassword.getText().toString();
 
+        //checkbox values
         Integer int_hospitalised;
         if (Hospitalised.isChecked()) {
             int_hospitalised = 1;

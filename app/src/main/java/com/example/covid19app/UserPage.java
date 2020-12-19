@@ -33,6 +33,11 @@ public class UserPage extends AppCompatActivity {
 
     }
 
+    public void OpenDash(View view){
+        startActivity(new Intent(this, Dashboard.class));
+
+    }
+
     public void OnEdit(View view){
         startActivity(new Intent(this, EditUser.class));
 

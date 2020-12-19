@@ -244,4 +244,13 @@
         app:layout_constraintStart_toEndOf="@+id/viewTextDate"
         tools:layout_editor_absoluteY="26dp" />
 
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="OpenDash"
+        android:text="Button"
+        tools:layout_editor_absoluteX="302dp"
+        tools:layout_editor_absoluteY="119dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

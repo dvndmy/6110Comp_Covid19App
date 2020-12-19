@@ -13,10 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Covid19App"
         android:usesCleartextTraffic="true">
+        <activity android:name=".Dashboard"></activity>
         <activity android:name=".forgotPassword" />
         <activity android:name=".AddSymptoms" />
         <activity android:name=".YourRecords" />
-        <activity android:name=".UserProfile" />
         <activity android:name=".Registration" />
         <activity android:name=".MainActivity" />
         <activity android:name=".EditUser" />
