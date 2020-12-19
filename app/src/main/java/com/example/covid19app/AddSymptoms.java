@@ -3,7 +3,6 @@ package com.example.covid19app;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -15,7 +14,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -27,7 +25,7 @@ public class AddSymptoms extends AppCompatActivity {
             losstaste, losssmell, chills, headache, nausea;
 
     //ID field to test database connection
-    EditText ID;
+    EditText ID, otherSymptoms;
     Integer int_breathless, int_diarrhoea, int_cough, int_congested, int_others, int_sorethroat,
             int_muscleache, int_hightemp, int_losstaste, int_losssmell, int_chills, int_headache, int_nausea;
     String ipAddress ;
@@ -52,7 +50,7 @@ public class AddSymptoms extends AppCompatActivity {
         chills = (CheckBox)findViewById(R.id.cb_Chills);
         headache = (CheckBox)findViewById(R.id.cb_Headache);
         nausea = (CheckBox)findViewById(R.id.cb_Nausea);
-
+        otherSymptoms = (EditText)findViewById(R.id.et_othersymptoms);
         ipAddress = ((MyIP) this.getApplication()).getIP();
 
         submitBtn = (Button) findViewById(R.id.submitBtn);
@@ -117,9 +115,13 @@ public class AddSymptoms extends AppCompatActivity {
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                backuserPage();
+                backDashboard();
             }
         });
+    }
+
+    public void ShowOtherBox(View view){
+        otherSymptoms.setEnabled(true);
     }
 
     public void onSubmit(View view) throws InterruptedException {
@@ -153,11 +155,11 @@ public class AddSymptoms extends AppCompatActivity {
             int_congested = 0;
         }
 
-        Integer int_others;
+        String int_others;
         if (others.isChecked()) {
-            int_others = 1;
+            int_others = otherSymptoms.getText().toString();
         } else {
-            int_others = 0;
+            int_others = "0";
         }
 
         Integer int_sorethroat;
@@ -215,14 +217,15 @@ public class AddSymptoms extends AppCompatActivity {
         } else {
             int_nausea = 0;
         }
-
+        SharedPreferences preferences = getSharedPreferences("MYPREFS", MODE_PRIVATE);
+        String emailad = preferences.getString("userpage","");
             Handler handler = new Handler(Looper.getMainLooper());
             handler.post(new Runnable() {
                 @Override
                 public void run() {
                     //Starting Write and Read data with URL
                     //Creating array for parameters
-                    String[] field = new String[13];
+                    String[] field = new String[14];
                     field[0] = "cough";
                     field[1] = "breathlessness";
                     field[2] = "lossofTaste";
@@ -236,8 +239,9 @@ public class AddSymptoms extends AppCompatActivity {
                     field[10] = "nausea";
                     field[11] = "diarrhea";
                     field[12] = "other";
+                    field[13] = "emailad";
                     //Creating array for data
-                    String[] data = new String[13];
+                    String[] data = new String[14];
                     data[0] = int_cough.toString();
                     data[1] = int_breathless.toString();
                     data[2] = int_losstaste.toString();
@@ -250,7 +254,8 @@ public class AddSymptoms extends AppCompatActivity {
                     data[9] = int_congested.toString();
                     data[10] = int_nausea.toString();
                     data[11] = int_diarrhoea.toString();
-                    data[12] = int_others.toString();
+                    data[12] = int_others;
+                    data[13] = emailad;
                     //change ip and path as necessary
                     PutData putData = new PutData("http://"+ ipAddress +"/c19php/AddSymptoms.php", "POST", field, data);
                     if (putData.startPut()) {
@@ -258,7 +263,7 @@ public class AddSymptoms extends AppCompatActivity {
                             String result = putData.getResult();
                             if (result.equals("Symptoms Updated")) {
                                 Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                Intent intent = new Intent(getApplicationContext(), Dashboard.class);
                                 startActivity(intent);
                                 finish();
                             } else {
@@ -352,8 +357,8 @@ public class AddSymptoms extends AppCompatActivity {
     }
 
 
-    public void backuserPage() {
-        Intent intent = new Intent(this, UserPage.class);
+    public void backDashboard() {
+        Intent intent = new Intent(this, Dashboard.class);
         startActivity(intent);
     }
 
