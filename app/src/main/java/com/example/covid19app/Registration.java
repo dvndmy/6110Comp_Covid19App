@@ -157,9 +157,10 @@ female.setChecked(false);
                             String result = putData.getResult();
                             if (result.equals("Registered Successfully")) {
                                 Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                                startActivity(intent);
+                                Intent backToLog = new Intent(getApplicationContext(), MainActivity.class);
+                                startActivity(backToLog);
                                 finish();
+
                             } else {
                                 Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
                             }
@@ -233,5 +234,9 @@ female.setChecked(false);
     boolean isEmail(EditText text) {
         CharSequence email = text.getText().toString();
         return (!TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches());
+    }
+
+    public void OpenLog (View view) {
+        startActivity(new Intent(this, MainActivity.class));
     }
 }

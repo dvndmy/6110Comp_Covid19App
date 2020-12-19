@@ -17,8 +17,8 @@
         <activity android:name=".forgotPassword" />
         <activity android:name=".AddSymptoms" />
         <activity android:name=".YourRecords" />
-        <activity android:name=".Registration" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".Registration" />
         <activity android:name=".EditUser" />
         <activity android:name=".UserPage" />
         <activity android:name=".DoctorLogin" />
