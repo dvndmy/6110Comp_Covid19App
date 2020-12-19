@@ -24,7 +24,7 @@ public class AddSymptoms extends AppCompatActivity {
     CheckBox breathless, diarrhoea, cough, congested, others, sorethroat, muscleache, hightemp,
             losstaste, losssmell, chills, headache, nausea;
 
-    //ID field to test database connection
+
     EditText ID, otherSymptoms;
     Integer int_breathless, int_diarrhoea, int_cough, int_congested, int_others, int_sorethroat,
             int_muscleache, int_hightemp, int_losstaste, int_losssmell, int_chills, int_headache, int_nausea;
