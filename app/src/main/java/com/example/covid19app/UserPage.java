@@ -30,7 +30,6 @@ public class UserPage extends AppCompatActivity {
     String ipAddress, str_mood, str_stress, str_energy;
 
 
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_page);
@@ -47,13 +46,12 @@ public class UserPage extends AppCompatActivity {
 
         submitfeelBtn = (Button) findViewById(R.id.btnSubmitFeel);
 
-
-
-
         SharedPreferences preferences = getSharedPreferences("MYPREFS", MODE_PRIVATE);
         String userpage = preferences.getString("userpage","");
 
     }
+
+    //Code for button operations
 
     public void OpenSymp(View view){
         startActivity(new Intent(this, AddSymptoms.class));
@@ -70,7 +68,7 @@ public class UserPage extends AppCompatActivity {
     }
 
 
-
+    //Ensures that only one checkbox can be checked at a time
     public void onvgClick(View view){
 
         verygood.setChecked(true);
@@ -179,7 +177,7 @@ public class UserPage extends AppCompatActivity {
 
     }
 
-
+    //Adding menu as well as logout functionality
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

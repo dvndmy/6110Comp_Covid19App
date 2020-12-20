@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 public class Dashboard extends AppCompatActivity {
 
+    //Code for button operations
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,8 @@ public class Dashboard extends AppCompatActivity {
         startActivity(new Intent(this, EditUser.class));
 
     }
+
+    //Adding menu as well as logout functionality
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

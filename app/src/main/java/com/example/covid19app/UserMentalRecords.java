@@ -52,6 +52,8 @@ public class UserMentalRecords extends AppCompatActivity {
     }
     private void getData() {
 
+        //Todo
+
         String value = txtvalue.getText().toString().trim();
 
 //        if (value.equals("")) {
@@ -82,6 +84,8 @@ public class UserMentalRecords extends AppCompatActivity {
     }
 
     private void showJSON(String response) {
+
+        //Todo
         ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
         try {
             JSONObject jsonObject = new JSONObject(response);
@@ -108,7 +112,7 @@ public class UserMentalRecords extends AppCompatActivity {
 
             }
 
-
+        //Todo
         } catch (JSONException e) {
             e.printStackTrace();
         }

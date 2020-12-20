@@ -13,6 +13,7 @@ public class SplashActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splashscreen);
 
+        // Todo
         handler=new Handler();
         handler.postDelayed(() -> {
             Intent intent=new Intent(SplashActivity.this,MainActivity.class);

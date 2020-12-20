@@ -31,9 +31,12 @@ public class DoctorLogin extends AppCompatActivity {
     }
 
     public void OnLogin(View view) {
+
+        //Retrieves the user's entered email and password
         String email = EmailEt.getText().toString();
         String password = PasswordEt.getText().toString();
 
+        //Verifies that the user has correctly entered; an email address and a password
         if (!email.equals("") && !password.equals("")) {
             Handler handler = new Handler(Looper.getMainLooper());
             handler.post(new Runnable() {

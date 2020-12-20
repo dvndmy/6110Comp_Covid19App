@@ -51,7 +51,7 @@ public class UserSymptomRecords extends AppCompatActivity {
 
     }
     private void getData() {
-
+        //Todo
         String value = txtvalue.getText().toString().trim();
 
 //        if (value.equals("")) {
@@ -81,7 +81,10 @@ public class UserSymptomRecords extends AppCompatActivity {
 
     }
 
+
     private void showJSON(String response) {
+
+        //Todo
         ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
         try {
             JSONObject jsonObject = new JSONObject(response);
@@ -191,7 +194,7 @@ public class UserSymptomRecords extends AppCompatActivity {
 
             }
 
-
+        //Todo
         } catch (JSONException e) {
             e.printStackTrace();
         }

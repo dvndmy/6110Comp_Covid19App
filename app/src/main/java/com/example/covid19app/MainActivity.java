@@ -58,6 +58,8 @@ public void OnGoToDoctorLogin(View view) {
         String password = PasswordEt.getText().toString();
         SharedPreferences preferences = getSharedPreferences("MYPREFS", MODE_PRIVATE);
 
+
+        //Verifies that the user correctly entered; an email address and password
         if (!email.equals("") && !password.equals("")) {
             Handler handler = new Handler(Looper.getMainLooper());
             handler.post(new Runnable() {
