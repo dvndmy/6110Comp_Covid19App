@@ -35,7 +35,6 @@ public class UserPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_page);
 
-        ID = (EditText)findViewById(R.id.etID);
 
         verygood = (CheckBox)findViewById(R.id.cb_verygood);
         good = (CheckBox)findViewById(R.id.cb_good);

@@ -35,7 +35,6 @@ public class AddSymptoms extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_symptoms);
 
-        ID = (EditText)findViewById(R.id.etID);
 
         breathless = (CheckBox)findViewById(R.id.cb_Breathless);
         diarrhoea = (CheckBox)findViewById(R.id.cb_Diarrhoea);
