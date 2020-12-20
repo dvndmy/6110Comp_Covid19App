@@ -105,7 +105,71 @@ public class UserSymptomRecords extends AppCompatActivity {
                 String diarrhea = jo.getString(SymptomRecordConfig.KEY_diarrhea);
                 String other = jo.getString(SymptomRecordConfig.KEY_other);
 
-
+                if(cough.equals("0")){
+                    cough="No";
+                }else {
+                    cough="Yes";
+                }
+                if(breathlessness.equals("0")){
+                    breathlessness="No";
+                }else {
+                    breathlessness="Yes";
+                }
+                if(lossofTaste.equals("0")){
+                    lossofTaste="No";
+                }else {
+                    lossofTaste="Yes";
+                }
+                if(lossofSmell.equals("0")){
+                    lossofSmell="No";
+                }else {
+                    lossofSmell="Yes";
+                }
+                if(highTemprature.equals("0")){
+                    highTemprature="No";
+                }else {
+                    highTemprature="Yes";
+                }
+                if(chills.equals("0")){
+                    chills="No";
+                }else {
+                    chills="Yes";
+                }
+                if(headache.equals("0")){
+                    headache="No";
+                }else {
+                    headache="Yes";
+                }
+                if(muscleAche.equals("0")){
+                    muscleAche="No";
+                }else {
+                    muscleAche="Yes";
+                }
+                if(soreThroat.equals("0")){
+                    soreThroat="No";
+                }else {
+                    soreThroat="Yes";
+                }
+                if(congestedNose.equals("0")){
+                    congestedNose="No";
+                }else {
+                    congestedNose="Yes";
+                }
+                if(nausea.equals("0")){
+                    nausea="No";
+                }else {
+                    nausea="Yes";
+                }
+                if(diarrhea.equals("0")){
+                    diarrhea="No";
+                }else {
+                    diarrhea="Yes";
+                }
+                if(other.equals("0")){
+                    other="No";
+                }else {
+                    other="Yes";
+                }
                 final HashMap<String, String> employees = new HashMap<>();
                 employees.put(SymptomRecordConfig.KEY_cough, "Cough = " + cough);
                 employees.put(SymptomRecordConfig.KEY_enterdate,"Date: "+ enterdate);
