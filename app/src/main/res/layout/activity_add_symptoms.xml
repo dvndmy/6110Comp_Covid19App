@@ -209,20 +209,6 @@
         app:layout_constraintVertical_bias="0.913" />
 
     <EditText
-        android:id="@+id/etID"
-        android:layout_width="238dp"
-        android:layout_height="44dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Enter ID (Test Purposes)"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.131" />
-
-    <EditText
         android:id="@+id/et_othersymptoms"
         android:layout_width="242dp"
         android:layout_height="53dp"
