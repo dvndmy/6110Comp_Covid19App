@@ -1,10 +1,11 @@
 package com.example.covid19app;
 
-public class SymptomRecordConfig {
+public class SymptomRecordConfig extends MyIP {
 
 
 
-    public static final String DATA_URL = "http://192.168.1.15/c19php/symptomrecords.php?email=";
+private static String ip = getIPad();
+    public static final String DATA_URL = "http://" + ip +"/c19php/symptomrecords.php?email=";
     public static final String KEY_cough = "cough";
     public static final String KEY_enterdate = "enterdate";
     public static final String KEY_breathlessness =  "breathlessness";
@@ -23,5 +24,10 @@ public class SymptomRecordConfig {
     public static final String JSON_ARRAY = "result";
 
     public SymptomRecordConfig() throws NoSuchFieldException {
+
+    }
+    public static String getIPad() {
+        MyIP ip = new MyIP();
+        return ip.getIP();
     }
 }
