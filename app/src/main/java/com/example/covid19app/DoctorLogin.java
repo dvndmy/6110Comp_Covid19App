@@ -56,7 +56,7 @@ public class DoctorLogin extends AppCompatActivity {
                             if (result.equals("Login Success")) {
                                 Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
                                //todo: change page link on line below
-                                Intent intent = new Intent(getApplicationContext(), UserPage.class);
+                                Intent intent = new Intent(getApplicationContext(), DoctorDashboard.class);
                                 startActivity(intent);
                                 finish();
                             } else {
