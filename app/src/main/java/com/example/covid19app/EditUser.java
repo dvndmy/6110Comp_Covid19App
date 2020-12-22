@@ -61,7 +61,6 @@ public class EditUser extends AppCompatActivity {
 
         SharedPreferences preferences = getSharedPreferences("MYPREFS", MODE_PRIVATE);
         String userpage = preferences.getString("userpage","");
-        Toast.makeText(getApplicationContext(), userpage, Toast.LENGTH_SHORT).show();
         StringRequest stringRequest = new StringRequest( Request.Method.GET, "http://"+ ipAddress +"/c19php/GetProfileDetails.php?user="+userpage, response -> {
             try {
                 //converting the string to json array object

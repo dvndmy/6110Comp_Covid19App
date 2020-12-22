@@ -25,10 +25,6 @@ public class Dashboard extends AppCompatActivity {
         startActivity(new Intent(this, AddSymptoms.class));
 
     }
-    public void OpenRecord(View view){
-        startActivity(new Intent(this, YourRecords.class));
-
-    }
     public void OpenUserPage(View view){
         startActivity(new Intent(this, UserPage.class));
 
