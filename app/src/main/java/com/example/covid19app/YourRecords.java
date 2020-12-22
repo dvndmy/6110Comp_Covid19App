@@ -17,6 +17,8 @@ public class YourRecords extends AppCompatActivity {
         setContentView(R.layout.activity_your_records);
     }
 
+    //Adding menu as well as logout functionality
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu,menu);

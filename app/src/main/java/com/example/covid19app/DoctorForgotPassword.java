@@ -45,9 +45,8 @@ EditText etUserName,etPassword, etPassword2 ;
         String email = etUserName.getText().toString();
         String password = etPassword.getText().toString();
         String securitycode = etPassword2.getText().toString();
-    //TODO
-        //
 
+        //Verifies that the user has correctly entered; an email address, password and security code
         if (!email.equals("") && !password.equals("") && !securitycode.equals("")) {
             Handler handler = new Handler(Looper.getMainLooper());
             handler.post(new Runnable() {

@@ -116,6 +116,7 @@ female.setChecked(false);
         String str_age = Age.getText().toString();
         String str_weight = Weight.getText().toString();
         String str_securitycode = SecurityCode.getText().toString();
+        //Verifies that users have entered in all the required fields before registering an account
         if (checkEnteredData()) {
             Handler handler = new Handler(Looper.getMainLooper());
             handler.post(new Runnable() {
@@ -180,6 +181,7 @@ female.setChecked(false);
 
     }
 
+    //Verifies that users have entered all required fields
     Boolean checkEnteredData() {
         noErrors = true;
         if (isEmpty(FullName)) {

@@ -35,7 +35,6 @@ public class AddSymptoms extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_symptoms);
 
-
         breathless = (CheckBox)findViewById(R.id.cb_Breathless);
         diarrhoea = (CheckBox)findViewById(R.id.cb_Diarrhoea);
         cough = (CheckBox)findViewById(R.id.cb_Cough);
@@ -54,62 +53,6 @@ public class AddSymptoms extends AppCompatActivity {
 
         submitBtn = (Button) findViewById(R.id.submitBtn);
 
-
-
-
-
-
-  /*      submitBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String result = "Selected Symptoms";
-                if (breathless.isChecked()) {
-                    result += "\nBreathless";
-                }
-                if (diarrhoea.isChecked()) {
-                    result += "\nDiarrhoea";
-                }
-                if (cough.isChecked()) {
-                    result += "\nCough";
-                }
-                if (congested.isChecked()) {
-                    result += "\nCongested";
-                }
-                if (others.isChecked()) {
-                    result += "\nOthers";
-                }
-                if (sorethroat.isChecked()) {
-                    result += "\nSore Throat";
-                }
-                if (muscleache.isChecked()) {
-                    result += "\nMuscle Ache";
-                }
-                if (hightemp.isChecked()) {
-                    result += "\nHigh Temperature";
-                }
-                if (losstaste.isChecked()) {
-                    result += "\nLoss of Taste";
-                }
-                if (losssmell.isChecked()) {
-                    result += "\nLoss of Smell";
-                }
-                if (chills.isChecked()) {
-                    result += "\nChills";
-                }
-                if (headache.isChecked()) {
-                    result += "\nHeadache";
-                }
-                if (nausea.isChecked()) {
-                    result += "\nNausea";
-                }
-
-                Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
-
-            }
-
-        });
-        */
-
         Button backBtn = (Button) findViewById(R.id.backBtn);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,7 +67,8 @@ public class AddSymptoms extends AppCompatActivity {
     }
 
     public void onSubmit(View view) throws InterruptedException {
-        //Using Code from Register.php to test entering checkbox data into database
+
+        //Returns a value based on that status of a symptom's checkbox
         ;
         Integer int_cough;
         if (cough.isChecked()) {
@@ -216,6 +160,7 @@ public class AddSymptoms extends AppCompatActivity {
         } else {
             int_nausea = 0;
         }
+
         SharedPreferences preferences = getSharedPreferences("MYPREFS", MODE_PRIVATE);
         String emailad = preferences.getString("userpage","");
             Handler handler = new Handler(Looper.getMainLooper());
@@ -275,68 +220,10 @@ public class AddSymptoms extends AppCompatActivity {
 
                 }
             });
-
-
-
     }
 
+    //Adding menu as well as logout functionality
 
-
-
-
-
-
-
-
-
-  /*  public void onCheckboxClick(View view) {
-        boolean checked = ((CheckBox) view).isChecked();
-        String str ="";
-        //Checks if a checkbox was clicked
-        switch(view.getId()) {
-            case R.id.cb_Breathless:
-                str = checked?"Breathless Selected" : "Breathless Deselected";
-                break;
-            case R.id.cb_Diarrhoea:
-                str = checked?"Diarrhoea Selected" : "Diarrhoea Deselected";
-                break;
-            case R.id.cb_Cough:
-                str = checked?"Cough Selected" : "Cough Deselected";
-                break;
-            case R.id.cb_Congested:
-                str = checked?"Congested Selected" : "Congested Deselected";
-                break;
-            case R.id.cb_Others:
-                str = checked?"Others Selected" : "Others Deselected";
-                break;
-            case R.id.cb_Sorethroat:
-                str = checked?"Sore Throat Selected" : "Sore Throat Deselected";
-                break;
-            case R.id.cb_Muscleache:
-                str = checked?"Muscle Ache Selected" : "Muscle Ache Deselected";
-                break;
-            case R.id.cb_Hightemp:
-                str = checked?"High Temperature Selected" : "High Temperature Deselected";
-                break;
-            case R.id.cb_Losstaste:
-                str = checked?"Loss of Taste Selected" : "Loss of Taste Deselected";
-                break;
-            case R.id.cb_Losssmell:
-                str = checked?"Loss of Smell Selected" : "Loss of Smell Deselected";
-                break;
-            case R.id.cb_Chills:
-                str = checked?"Chills Selected" : "Chills Deselected";
-                break;
-            case R.id.cb_Headache:
-                str = checked?"Headache Selected" : "Headache Deselected";
-                break;
-            case R.id.cb_Nausea:
-                str = checked?"Nausea Selected" : "Nausea Deselected";
-                break;
-        }
-        Toast.makeText(getApplicationContext(), str, Toast.LENGTH_SHORT).show();
-
-    } */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu,menu);
@@ -360,7 +247,5 @@ public class AddSymptoms extends AppCompatActivity {
         Intent intent = new Intent(this, Dashboard.class);
         startActivity(intent);
     }
-
-
 
 }

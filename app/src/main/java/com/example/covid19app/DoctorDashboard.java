@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class DoctorDashboard extends AppCompatActivity {
 
+    //Code for button operations
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +31,7 @@ public class DoctorDashboard extends AppCompatActivity {
     }
 
 
+    //Adding menu as well as logout functionality
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
